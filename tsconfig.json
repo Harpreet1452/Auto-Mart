@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES5", // Or ES6 depending on your needs
+    "module": "ESNext",
+    "moduleResolution": "node", // Ensures Node.js-style module resolution
+    "jsx": "react", // Enables JSX in .tsx files
+    "strict": true, // Enables strict type-checking options
+    "esModuleInterop": true, // Allows default imports from CommonJS modules
+    "skipLibCheck": true, // Skip checking of all .d.ts files
+    "forceConsistentCasingInFileNames": true, // Enforces case-sensitive file imports
+    "baseUrl": ".", // Optional: Allows relative imports based on root directory
+    "paths": {
+      "@components/*": ["src/components/*"] // Optional: Example of custom path aliases
+    }
+  },
+  "include": ["src/**/*"], // Include all .ts/.tsx files under 'src' folder
+  "exclude": ["node_modules"] // Exclude node_modules folder
+}
