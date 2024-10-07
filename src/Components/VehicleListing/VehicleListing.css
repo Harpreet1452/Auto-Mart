@@ -1,0 +1,79 @@
+/* The container for the vehicle listing */
+.vehicle-listing {
+  background-color: #f9f9f9;
+  min-height: calc(
+    100vh - 70px - 60px
+  ); /* Adjust for NavBar (70px) and Footer (60px) */
+  overflow-x: hidden; /* Hide horizontal scroll */
+  padding-bottom: 20px; /* Add padding to prevent overlap with the footer */
+  transition: margin-left 0.3s ease, margin-right 0.3s ease, width 0.3s ease; /* Smooth transition for responsiveness */
+  display: flex;
+  flex-direction: column; /* Make it a column to handle card container and scrolling */
+}
+
+/* Vehicle cards container */
+.vehicle-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create 4 equal-width columns */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  align-items: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 25px;
+}
+
+/* Individual vehicle card styling */
+.vehicle-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for the card */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* When the sidebar is toggled (hidden), adjust the vehicle-listing position */
+#wrapper.toggled .vehicle-listing {
+  margin-left: 40px; /* Only 40px when the sidebar is closed */
+  width: calc(100% - 80px); /* Full width minus 40px from both sides */
+}
+
+/* Custom scrollbar for the page */
+body {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #f39c12 #f9f9f9; /* Colors for scrollbar */
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #f9f9f9; /* Scrollbar track color */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #f39c12; /* Scrollbar thumb color */
+  border-radius: 10px; /* Scrollbar rounded edges */
+  border: 3px solid #f9f9f9; /* Space between scrollbar and edge */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .vehicle-listing {
+    margin-left: 40px; /* Ensure a consistent 40px margin on smaller screens */
+    margin-right: 40px; /* Consistent right margin */
+    width: calc(100% - 80px); /* Full width minus 40px on both sides */
+  }
+
+  .vehicle-cards-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Adjust to 2 columns on smaller screens */
+  }
+}

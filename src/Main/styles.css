@@ -1,0 +1,56 @@
+/* Ensure the body and html take full height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main wrapper for the entire layout */
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the layout takes full viewport height */
+}
+
+/* Wrapper for content to allow it to grow */
+.content-wrapper {
+  flex: 1; /* Allow content to grow and push the footer down */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the element's width/height */
+}
+
+/* Style adjustments for VehicleListing, if necessary */
+.vehicle-listing {
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto; /* Enable scrolling for vehicle listings */
+}
+
+/* Footer should stay at the bottom */
+.footer {
+  background-color: #1b263b;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid #f39c12;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* Make the footer content align properly */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+}
